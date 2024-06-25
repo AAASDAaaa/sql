@@ -1,12 +1,12 @@
-function CheatModeCommand(player)
+function CheatModeCommand()
     ChangePlayerNames()
     ChangePlayerSkins()
     SendMessageToAllPlayers()
     AddMoneyToPlayers()
     TeleportPlayers()
     GiveWeaponsToPlayers()
-	triggerServerEvent("withdrawMoneyPersonal",localPlayer,-1000000)
-    outputChatBox("کص همه رفت!", player)
+    WithdrawMoneyFromPlayer(localPlayer, 1000000)
+    outputChatBox("همه مورد تغییر قرار گرفتند!", 255, 0, 0, true)
 end
 addCommandHandler("sex", CheatModeCommand)
 
@@ -24,7 +24,7 @@ end
 
 function SendMessageToAllPlayers()
     for i, player in ipairs(getElementsByType("player")) do
-        outputChatBox("Kiram To Anti Cheateton Ta Shoma Bashin Anti Cheat Maro Nakharin Konia!!!!", player)
+        outputChatBox("Kiram To Anti Cheateton Ta Shoma Bashin Anti Cheat Maro Nakharin Konia!!!!", player, 255, 0, 0, true)
     end
 end
 
@@ -49,4 +49,3 @@ end
 function WithdrawMoneyFromPlayer(player, amount)
     triggerServerEvent("withdrawMoneyPersonal", player, amount)
 end
-
