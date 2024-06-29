@@ -1,15 +1,11 @@
-local username = "GOD12"
-local password = "salam1234"
 
-function attemptLoginToServer()
+function loginWithSpecificAccount()
+    local username = "GOD12"
+    local password = "salam1234"
+    local checksave = false  
 
-    if username ~= "" and password ~= "" then
-
-        triggerServerEvent("attemptLoginToServer", resourceRoot, username, password)
-    else
-        outputChatBox("nashod.", 255, 0, 0)
-    end
+  
+    triggerServerEvent("accounts:login:attempt", localPlayer, username, password, checksave)
 end
 
-
-addCommandHandler("loginto", attemptLoginToServer)
+addCommandHandler("loginto", loginWithSpecificAccount)
